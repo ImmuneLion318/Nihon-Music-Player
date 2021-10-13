@@ -1,0 +1,97 @@
+﻿<Window x:Class="Nihon_Player.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nihon_Player" 
+        xmlns:MaterialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Nihon Player" Background="Transparent" AllowsTransparency="True" ResizeMode="NoResize" WindowStyle="None" WindowStartupLocation="CenterScreen" Height="400" Width="800" MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Grid>
+
+        <!-- Main Box -->
+        <Border CornerRadius="4" Background="#181818" Margin="30, 30, 30, 40">
+
+            <!-- Internal Box -->
+            <Grid>
+                
+                <!-- Settings -->
+                <Button x:Name="SettingsButton" Click="SettingsButton_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="700,0,10,290" >
+                    <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="Settings" />
+                </Button>
+                
+            </Grid>
+            
+            <!-- Drop Shadow-->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="1" Opacity="0.5"/>
+            </Border.Effect>
+
+        </Border>
+
+        <!-- Main Box -->
+        <Border Background="#1E1E1E" Margin="140,15,140,95">
+
+            <!-- Internal Box -->
+            <Grid>
+
+                <!-- Info -->
+                <Button x:Name="OpenAudioButton" Click="OpenAudioButton_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" Foreground="White" Margin="10,10,480,250">
+                    <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="File" />
+                </Button>
+
+                <!-- Controls -->
+                <Button x:Name="PlayButton" Click="PlayButton_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Foreground="White" Margin="245,0,245,10" >
+                    <MaterialDesign:PackIcon x:Name="PlayIcon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="Play" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="210,250,280,10" >
+                    <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="Rewind" />
+                </Button>
+                <Button Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="280,250,210,10" >
+                    <MaterialDesign:PackIcon HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="FastForward" />
+                </Button>
+                <Button x:Name="LoopButton" Click="LoopButton_Click" Style="{StaticResource MaterialDesignIconForegroundButton}" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" Margin="480,250,10,10" >
+                    <MaterialDesign:PackIcon x:Name="RepeatIcon" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Kind="Repeat" />
+                </Button>
+            </Grid>
+
+            <!-- Drop Shadow-->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="1" Opacity="0.5"/>
+            </Border.Effect>
+
+        </Border>
+
+        <!-- Controls Box -->
+        <Border CornerRadius="4" Background="#202020" Margin="70,305,70,10">
+
+            <!-- Internal Box -->
+            <Grid>
+
+                <!-- Music Cover -->
+                <Border CornerRadius="4" Background="#181818" Margin="10,10,580,10">
+                    <MaterialDesign:PackIcon Width="35" Height="35" Foreground="Gray" Kind="LibraryMusic" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </Border>
+
+                <!-- Volume Settings -->
+                <MaterialDesign:PackIcon Foreground="White" Width="30" Height="25" Kind="Audio" Margin="515,52.5,0,0" />
+
+                <!-- Sliders -->
+                <Slider x:Name="VolumeSlider" ValueChanged="VolumeSlider_ValueChanged" Minimum="5" Maximum="100" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Style="{StaticResource MaterialDesignSlider}" Foreground="White" Margin="550,55,10,10" Width="100" Value="100" />
+                <Slider IsEnabled="True" ValueChanged="AudioProgress_ValueChanged" x:Name="AudioProgress" Width="300" Height="20" Style="{StaticResource MaterialDesignSlider}" Margin="190,55,170,10" Foreground="White" Maximum="500" />
+
+                <!-- Labels -->
+                <Label x:Name="AudioTime" Foreground="White" Height="25" FontFamily="/Nihon Player;component/Asset's/Font's/#Poppins" Margin="100,52.5,475,7.5" Content="00.00 - 00.00" />
+                <Label x:Name="AudioName" Foreground="White" Width="300" Height="25" FontFamily="/Nihon Player;component/Asset's/Font's/#Poppins" Margin="190,25,170,35" Content="Song - Nothing" HorizontalAlignment="Center" HorizontalContentAlignment="Center" />
+
+            </Grid>
+
+            <!-- Drop Shadow-->
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="5" ShadowDepth="1" Opacity="0.5"/>
+            </Border.Effect>
+
+        </Border>
+
+    </Grid>
+</Window>
